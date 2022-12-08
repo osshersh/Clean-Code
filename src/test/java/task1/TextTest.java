@@ -20,26 +20,26 @@ class TextTest {
     }
 
     @Test
-    void shouldReturnProperWhenWordIsPalindrome() {
+    void shouldBePalindrome() {
         boolean isPalindrome = text.isPalindrome("level");
         assertTrue(isPalindrome);
     }
 
     @Test
-    void shouldReturnProperWhenWordIsNotPalindrome() {
+    void shouldBeNotPalindrome() {
         boolean isPalindrome = text.isPalindrome("code");
         assertFalse(isPalindrome);
     }
 
     @Test
-    void shouldReturnProperWhenMethodGetTextLengthCorrectCalculateTextLength() {
+    void shouldGetCorrectLength() {
         int wordLength = text.getTextLength("level");
         assertEquals(5, wordLength);
     }
 
     @Test
-    void shouldReturnProperWhenMethodGetTextLengthIncorrectCalculateTextLength() {
-        int wordLength = text.getTextLength("level");
-        assertNotEquals(3, wordLength);
+    void shouldReturnZeroWhenTextIsEmpty(){
+        int wordLength = text.getTextLength("");
+        assertEquals(0, wordLength);
     }
 }
