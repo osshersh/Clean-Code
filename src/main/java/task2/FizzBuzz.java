@@ -5,24 +5,26 @@ public class FizzBuzz {
     public void printFizzBuzzGame(int value) {
 
         for (int i = 1; i <= value; i++) {
-            if (getFizz(i) && getBuzz(i)) {
+            if (isNumberDivide3(i) && isNumberDivide5(i)) {
                 System.out.println("Fizz Buzz");
             }
-            if (getFizz(i)) {
+            else if (isNumberDivide3(i)) {
                 System.out.println("Fizz");
-            } else if (getBuzz(i)) {
+            }
+            else if (isNumberDivide5(i)) {
                 System.out.println("Buzz");
-            } else {
+            }
+            else {
                 System.out.println(i);
             }
         }
     }
 
-    public boolean getFizz(int number) {
+    private boolean isNumberDivide3(int number) {
         return number % 3 == 0;
     }
 
-    public boolean getBuzz(int number) {
+    private boolean isNumberDivide5(int number) {
         return number % 5 == 0;
     }
 }

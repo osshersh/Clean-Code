@@ -38,7 +38,7 @@ class TextTest {
     }
 
     @Test
-    void shouldReturnZeroWhenTextIsEmpty(){
+    void shouldReturnZeroWhenTextIsEmpty() {
         int wordLength = text.getTextLength("");
         assertEquals(0, wordLength);
     }
