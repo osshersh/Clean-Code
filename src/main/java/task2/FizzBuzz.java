@@ -2,18 +2,27 @@ package task2;
 
 public class FizzBuzz {
 
-    public String printFizzBuzzGame(int value) {
+    public void printFizzBuzzGame(int value) {
+
         for (int i = 1; i <= value; i++) {
-            System.out.println(i % 3 == 0 ? getFizzBuzzOrFizz(i) : getBuzz(i));
+            if (getFizz(i) && getBuzz(i)) {
+                System.out.println("Fizz Buzz");
+            }
+            if (getFizz(i)) {
+                System.out.println("Fizz");
+            } else if (getBuzz(i)) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
         }
-        return "Game Over";
     }
 
-    private String getFizzBuzzOrFizz(int number) {
-        return number % 5 == 0 ? "Fizz Buzz" : "Fizz";
+    public boolean getFizz(int number) {
+        return number % 3 == 0;
     }
 
-    private String getBuzz(int number) {
-        return number % 5 == 0 ? "Buzz" : String.valueOf(number);
+    public boolean getBuzz(int number) {
+        return number % 5 == 0;
     }
 }
