@@ -1,44 +1,37 @@
 package task3;
 
 public class Calculator {
-    private double value1;
-    private double value2;
+    private Addition addition;
+    private Divide divide;
+    private Multiply multiply;
+    private Subtract subtract;
 
-
-    public Calculator(double value1, double value2) {
-        this.value1 = value1;
-        this.value2 = value2;
+    public Calculator(Addition addition, Divide divide, Multiply multiply, Subtract subtract) {
+        this.addition = addition;
+        this.divide = divide;
+        this.multiply = multiply;
+        this.subtract = subtract;
+    }
+    public Calculator(){
+        this.subtract = new Subtract();
+        this.multiply = new Multiply();
+        this.divide = new Divide();
+        this.addition = new Addition();
     }
 
-    public double getSum() {
-        return value1 + value2;
-    }
+    public double calculationMathematics(double value1, char sign, double value2) {
 
-    public double getSubtract() {
-        return value1 - value2;
-    }
-
-    public double getMultiply() {
-        return value1 * value2;
-    }
-
-    public double getDivide() {
-        return value1 / value2;
-    }
-
-    public double getValue1() {
-        return value1;
-    }
-
-    public double getValue2() {
-        return value2;
-    }
-
-    public void setValue1(double value1) {
-        this.value1 = value1;
-    }
-
-    public void setValue2(double value2) {
-        this.value2 = value2;
+        switch (sign){
+            case '+':
+                return addition.calculation(value1,value2);
+            case '/':
+                return divide.calculation(value1,value2);
+            case '*':
+                return multiply.calculation(value1,value2);
+            case '-':
+                return subtract.calculation(value1,value2);
+            default:
+                return 0;
+        }
     }
 }
