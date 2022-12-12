@@ -5,13 +5,13 @@ public class FizzBuzz {
     public void printFizzBuzzGame(int value) {
 
         for (int i = 1; i <= value; i++) {
-            if (isNumberDivide3(i) && isNumberDivide5(i)) {
+            if (isDivisibleBy(i,3) && isDivisibleBy(i,5)) {
                 System.out.println("Fizz Buzz");
             }
-            else if (isNumberDivide3(i)) {
+            else if (isDivisibleBy(i,3)) {
                 System.out.println("Fizz");
             }
-            else if (isNumberDivide5(i)) {
+            else if (isDivisibleBy(i,5)) {
                 System.out.println("Buzz");
             }
             else {
@@ -20,11 +20,7 @@ public class FizzBuzz {
         }
     }
 
-    private boolean isNumberDivide3(int number) {
-        return number % 3 == 0;
-    }
-
-    private boolean isNumberDivide5(int number) {
-        return number % 5 == 0;
+    private boolean isDivisibleBy(int number, int divider) {
+        return number % divider == 0;
     }
 }
