@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class MultiplyTest {
 
     @Test
-    void shouldReturnValue1MultiplyValue2() {
-        double result = new Multiply().calculation(5, 5);
+    void shouldMultiply() {
+        double result = new Multiply().calculate(5, 5);
         assertEquals(25, result);
     }
 }

@@ -9,8 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class SubtractTest {
 
     @Test
-    void shouldReturnValue1SubtractValue2() {
-        double result = new Subtract().calculation(5, 5);
+    void shouldSubtract() {
+        double result = new Subtract().calculate(5, 5);
         assertEquals(0, result);
     }
 }
