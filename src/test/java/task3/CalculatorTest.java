@@ -3,9 +3,9 @@ package task3;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.List;
 
 class CalculatorTest {
     private Calculator calculator;
@@ -33,5 +33,10 @@ class CalculatorTest {
     @Test
     void shouldSubtractWhenSignIsSubtract() {
         assertEquals(4, calculator.calculateMathematics(6, '-', 2));
+    }
+
+    @Test
+    void shouldReturnZeroWhenSignIsNotPresent() {
+        assertEquals(0, calculator.calculateMathematics(6, '%', 2));
     }
 }
